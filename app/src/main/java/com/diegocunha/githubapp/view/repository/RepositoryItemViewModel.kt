@@ -1,8 +1,8 @@
 package com.diegocunha.githubapp.view.repository
 
-import com.diegocunha.githubapp.model.data.RetrofitRepository
+import com.diegocunha.githubapp.model.data.GitRepo
 
-class RepositoryItemViewModel(val repository: RetrofitRepository) {
+class RepositoryItemViewModel(val repository: GitRepo) {
 
     val imageUrl = repository.owner.avatarUrl
 

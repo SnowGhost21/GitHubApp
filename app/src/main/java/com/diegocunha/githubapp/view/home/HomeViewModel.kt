@@ -4,15 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.diegocunha.githubapp.extensions.mutableLiveDataOf
-import com.diegocunha.githubapp.model.data.RetrofitRepository
 import com.diegocunha.githubapp.model.repository.GitRepository
 import io.reactivex.disposables.Disposable
 
 class HomeViewModel(private val repository: GitRepository) : ViewModel() {
 
     private var numberPage = 1
-    private val _repositories = MutableLiveData<List<RetrofitRepository>>()
-    val repositories: LiveData<List<RetrofitRepository>> = _repositories
+    private val _repositories = MutableLiveData<List<com.diegocunha.githubapp.model.data.GitRepo>>()
+    val repositories: LiveData<List<com.diegocunha.githubapp.model.data.GitRepo>> = _repositories
     private val _emptyResponse = mutableLiveDataOf(true)
     val emptyResponse: LiveData<Boolean> = _emptyResponse
     private var repositoriesDisposable: Disposable? = null

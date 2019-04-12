@@ -1,10 +1,10 @@
 package com.diegocunha.githubapp.model.data
 
 
-val createRepositoryOwner = RetrofitOwner("ownerName",
+val createRepositoryOwner = GitRepositoryOwner("ownerName",
     "avatarUrl","profie")
 
-val createRepositoryCompleted = RetrofitRepository("name",
+val createRepositoryCompleted = GitRepo("name",
     "fullName",
     "description",
     "language",
@@ -14,4 +14,4 @@ val createRepositoryCompleted = RetrofitRepository("name",
 
 val createListOfRepositories = listOf(createRepositoryCompleted, createRepositoryCompleted)
 
-val createResponse = RetrofitResponse(createListOfRepositories)
+val createResponse = GitRepositoryResponse(createListOfRepositories)

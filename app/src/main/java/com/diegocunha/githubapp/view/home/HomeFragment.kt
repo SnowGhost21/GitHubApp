@@ -15,7 +15,8 @@ import com.diegocunha.githubapp.view.repository.RepositoryAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-class HomeFragment : Fragment(), SearchView.OnQueryTextListener, SearchView.OnCloseListener, View.OnClickListener {
+class HomeFragment : Fragment(), SearchView.OnQueryTextListener, SearchView.OnCloseListener,
+    View.OnClickListener {
 
     private val viewModel: HomeViewModel by viewModel()
     private lateinit var searchView: SearchView
@@ -26,12 +27,22 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener, SearchView.OnCl
     }
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
         val adapter = RepositoryAdapter()
+        adapter.onClickListener.observe(this, Observer {
+            it?.let {
+
+            }
+        })
+
         binding.repositoriesRecyclerView.adapter = adapter
 
         viewModel.repositories.observe(this, Observer {
@@ -42,7 +53,8 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener, SearchView.OnCl
             }
         })
 
-        binding.repositoriesRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        binding.repositoriesRecyclerView.addOnScrollListener(object :
+            RecyclerView.OnScrollListener() {
 
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
@@ -74,7 +86,10 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener, SearchView.OnCl
         inflater.inflate(R.menu.menu_home, menu)
         val item = menu.findItem(R.id.action_search)
         searchView = SearchView((activity as MainActivity).supportActionBar!!.themedContext)
-        MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW or MenuItemCompat.SHOW_AS_ACTION_IF_ROOM)
+        MenuItemCompat.setShowAsAction(
+            item,
+            MenuItemCompat.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW or MenuItemCompat.SHOW_AS_ACTION_IF_ROOM
+        )
         MenuItemCompat.setActionView(item, searchView)
         searchView.setOnQueryTextListener(this)
         searchView.setOnCloseListener(this)
@@ -96,6 +111,10 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener, SearchView.OnCl
     }
 
     override fun onClick(v: View?) {
+        //Nothing to do
+    }
+
+    private fun navigateToDetail(params: RepositoryAdapter.RepositoryNavParam) {
 
     }
 }

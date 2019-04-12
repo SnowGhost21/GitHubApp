@@ -5,6 +5,7 @@ import com.diegocunha.githubapp.model.repository.GitRepository
 import com.diegocunha.githubapp.model.repository.retrofit.GitHubApi
 import com.diegocunha.githubapp.model.repository.retrofit.GitHubRetrofitRepository
 import com.diegocunha.githubapp.view.home.HomeViewModel
+import com.diegocunha.githubapp.view.repository.RepositoryDetailViewModel
 import com.google.gson.GsonBuilder
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
@@ -50,4 +51,6 @@ val appModules = module {
     single { GitHubRetrofitRepository(get()) as GitRepository }
 
     viewModel { HomeViewModel(get()) }
+
+    viewModel { RepositoryDetailViewModel(get()) }
 }
