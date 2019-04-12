@@ -8,5 +8,5 @@ import retrofit2.http.Query
 interface GitHubApi {
 
     @GET("repositories")
-    fun getRepositories(@Query("q") parameter: String, @Query("per_page") pageSize: Int, @Query("page") page: Int): Single<RetrofitResponse>
+    fun getRepositories(@Query("q") parameter: String?, @Query("per_page") pageSize: Int, @Query("page") page: Int): Single<RetrofitResponse>
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GitHubApp</string>
+    <string name="empty_repository">Busque seus repositorios</string>
 </resources>

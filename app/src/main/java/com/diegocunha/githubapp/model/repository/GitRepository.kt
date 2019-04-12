@@ -5,5 +5,5 @@ import io.reactivex.Single
 
 interface GitRepository {
 
-    fun getRepositories(parameter: String, pageSize: Int, page: Int): Single<RetrofitResponse>
+    fun getRepositories(parameter: String?, page: Int): Single<RetrofitResponse>
 }

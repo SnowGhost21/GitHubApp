@@ -3,4 +3,6 @@
     <color name="colorPrimary">#424242</color>
     <color name="colorPrimaryDark">#212121</color>
     <color name="colorAccent">#616161</color>
+    <color name="cardSubtitleColor">#7f8382</color>
+    <color name="titleTextColor">#3e3e3e</color>
 </resources>
