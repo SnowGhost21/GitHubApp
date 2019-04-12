@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">GitHubApp</string>
     <string name="empty_repository">Busque seus repositorios</string>
+    <string name="description_title">Description</string>
+    <string name="description_not_available">Description not available</string>
 </resources>

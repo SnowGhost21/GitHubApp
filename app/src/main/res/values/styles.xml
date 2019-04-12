@@ -36,4 +36,28 @@
     </style>
 
 
+    <style name="Widget.AppTheme.Text" parent="android:Widget">
+        <item name="android:fontFamily">@font/lato_light</item>
+    </style>
+
+    <style name="Widget.AppTheme.Text.Body">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+
+    <style name="Widget.AppTheme.Text.Body.Title">
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/lato</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.App" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.App.Title">
+        <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 </resources>
